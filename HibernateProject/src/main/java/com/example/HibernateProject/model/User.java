@@ -5,15 +5,15 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String surname;
     private int age;
+    @OneToMany(fetch = FetchType.LAZY)
     private List<BankCard> list;
 
     public User() {
-
     }
 
     public int getId() {
