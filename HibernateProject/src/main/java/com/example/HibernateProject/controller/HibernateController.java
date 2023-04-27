@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HibernateController {
-//     private final HibernateService hibernateService;
-//
-//    public HibernateController(HibernateService hibernateService) {
-//        this.hibernateService = hibernateService;
-//    }
-//
-//
-//    @GetMapping("ID/{number}")
-//    public ResponseEntity<?> get(@PathVariable int number) {
-//        try {
-//            return ResponseEntity.ok(hibernateService.getOne(number));
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-//        }
-//    }
+     private final HibernateService hibernateService;
+
+    public HibernateController(HibernateService hibernateService) {
+        this.hibernateService = hibernateService;
+    }
+
+
+    @GetMapping("ID/{number}")
+    public ResponseEntity<?> get(@PathVariable int number) {
+        try {
+            return ResponseEntity.ok(hibernateService.getOne(number));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
 }
