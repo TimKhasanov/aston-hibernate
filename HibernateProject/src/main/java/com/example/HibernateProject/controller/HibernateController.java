@@ -18,7 +18,7 @@ public class HibernateController {
     }
 
 
-    @GetMapping("ID/{number}")
+    @GetMapping("/{number}")
     public ResponseEntity<?> get(@PathVariable int number) {
         try {
             return ResponseEntity.ok(hibernateService.getOne(number));
